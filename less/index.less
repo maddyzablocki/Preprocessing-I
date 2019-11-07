@@ -60,11 +60,25 @@ html, body {
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: @main-font
+	font-family: @main-font;
 }
 
 body {
 	background-color: rgb(255, 255, 255);
+}
+
+.font-size () {
+	font-size: 16px;
+}
+
+.nav-design () {
+	height: 7em;
+	padding: .5em;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 
 .parent {
@@ -74,20 +88,8 @@ body {
 	justify-content: space-around;
 
 	nav {
-		height: 7em;
-		padding: .5em;
-		text-align: center;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
+		.nav-design ();
 
-			@media (max-width: 500px) {
-			display: flex;
-        	flex-direction: column-reverse;
-        	height: 50%;
-        	justify-content: center;
-			}
 		display {
 			width: 100%;
 			height:7em;
@@ -132,7 +134,7 @@ body {
 }//This closes the main content tag
 
 p {
-	font-size: 16px;
+	.font-size ();
 	text-align: center;
 	padding: 1%;
 }
@@ -149,11 +151,7 @@ p {
 		align-content: right;
 		width: 100%;
 		height: 100%;
-
-		@media (max-width: 500px) {
-			display: none;
-		}//This closes the media query
-	}//This closes the top img tag
+	} //This closes the top img tag
 }//This closes the main image tag
 
 button {
@@ -187,10 +185,6 @@ button:hover {
 	width:80%;
 	height:40%;
 	margin: 0 auto;
-
-	@media (max-width: 500px) {
-		flex-direction: column;
-	}//This closes the media query
 
 	.about-me {
 		line-height: 32px;
@@ -240,10 +234,7 @@ h4 {
 	width: 80%;
 	height: 40%;
 	margin: 0 auto;
-
-	@media (max-width: 500px) {
-		flex-direction: column;
-	}//This closes the media query
+	}
 
 	.work1 {
 		width: 33.3%;
@@ -268,14 +259,13 @@ h4 {
 	.work3 {
 		.work1();
 	}//This closes the work 3 tag
-}//This closes the history tag
 
 h5 {
 	font-size: 24px;
 }
 
-.footer {
-	.nav();
+.footer nav {
+	.nav-design ();
 }
 
 .footer-nav {
@@ -285,10 +275,94 @@ h5 {
 
 @media (max-width: 500px) {
 
-	.nav-display {
-        display: flex;
-        flex-direction: column-reverse;
-        height: 50%;
-        justify-content: center;
-    }
+	.parent nav {
+		display: flex;
+		flex-direction: column;
+		height: 50%;
+		justify-content: center;
+	}
+
+	.main-image {
+		display: none;
+	}
+
+	.main-content {
+		height: 40%;
+	}
+
+	.middle-content {
+		display:flex;
+		flex-direction: row;
+		width:80%;
+		height:35%;
+		margin: 0 auto;
+	}
+
+	.middle-content .skills {
+		line-height: 16px;
+		width: 50%;
+		height: 100%;
+		background-color: lightgray;
+		margin: 5px;
+		font-size: 12px;
+	}
+
+	.middle-content .about-me {
+		display: none;
+	}
+
+	.middle-content .contact-me {
+		line-height: 16px;
+		width: 50%;
+		height: 100%;
+		background-color: lightgray;
+		margin: 5px;
+		font-size: 12px;
+	}
+
+	h4 {
+		font-size: 24px;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	padding: 5px;
+	}
+
+	.history {
+	display:flex;
+	flex-direction: row;
+	width: 80%;
+	height: 60%;
+	margin: 0 auto;
+	}
+
+	.history .work1 {
+		width: 33.3%;
+		height: 100%;
+		margin: 10px 5px 5px 5px;
+		padding: 5px;
+		text-align: center;
+		line-height: 24px;
+		background-color: gray;
+	}
+
+	.history .work2 {
+		width: 33.3%;
+		height: 100%;
+		margin: 10px 5px 5px 5px;
+		padding: 5px;
+		text-align: center;
+		line-height: 24px;
+		background-color: lightgray;
+	}
+
+	.history .work3 {
+		width: 33.3%;
+		height: 100%;
+		margin: 10px 5px 5px 5px;
+		padding: 5px;
+		text-align: center;
+		line-height: 24px;
+		background-color: gray;
+	}
 }
